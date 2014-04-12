@@ -33,3 +33,6 @@ group :development, :test do
 		gem 'pg'
 	end
 end
+
+
+gem 'paperclip'
