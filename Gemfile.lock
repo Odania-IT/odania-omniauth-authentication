@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    odania_omniauth_authentication (0.0.1)
+    odania_omniauth_authentication (0.0.2)
       odania_core
       omniauth
       omniauth-identity
@@ -89,7 +89,7 @@ GEM
     mysql2 (0.3.15)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    odania_core (0.0.1)
+    odania_core (0.0.2)
       bootstrap-sass (~> 3.1.1)
       ckeditor
       coffee-rails (~> 4.0.1)
