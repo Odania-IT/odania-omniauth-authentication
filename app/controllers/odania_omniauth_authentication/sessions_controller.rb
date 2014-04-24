@@ -3,6 +3,7 @@ require_dependency "odania_omniauth_authentication/application_controller"
 module OdaniaOmniauthAuthentication
 	class SessionsController < ApplicationController
 		skip_before_filter :verify_authenticity_token, :only => :create
+		before_filter :valid_site!
 
 		def new
 		end
@@ -23,20 +24,20 @@ module OdaniaOmniauthAuthentication
 					# account. But we found the identity and the user associated with it
 					# is the current user. So the identity is already associated with
 					# this user. So let's display an error message.
-					redirect_to redirect_back_or_default('Already linked that account')
+					return redirect_back_or_default('Already linked that account')
 				else
 					# The identity is not associated with the current_user so lets
 					# associate the identity
 					@identity.user = current_user
 					@identity.save!
-					redirect_to redirect_back_or_default(t('Successfully linked that account'))
+					return redirect_back_or_default(t('Successfully linked that account'))
 				end
 			else
 				if @identity.user.present?
 					# The identity we found had a user associated with it so let's
 					# just log them in here
 					set_current_user(@identity.user)
-					redirect_to redirect_back_or_default(t('Signed in'))
+					return redirect_back_or_default(t('Signed in'))
 				else
 					# No user associated with the identity so we need to create a new one
 					user = Odania::User.new
@@ -50,14 +51,14 @@ module OdaniaOmniauthAuthentication
 
 					set_current_user(user)
 
-					redirect_to redirect_back_or_default(t('Signed in'))
+					return redirect_back_or_default(t('Signed in'))
 				end
 			end
 		end
 
 		def destroy
 			set_current_user(nil)
-			redirect_to redirect_back_or_default('Signed out')
+			redirect_back_or_default('Signed out')
 		end
 
 		protected

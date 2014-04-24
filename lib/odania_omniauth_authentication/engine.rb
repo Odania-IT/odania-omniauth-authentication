@@ -1,3 +1,6 @@
+require 'omniauth'
+require 'omniauth-identity'
+
 module OdaniaOmniauthAuthentication
 
 	class Engine < ::Rails::Engine
