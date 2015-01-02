@@ -1,7 +1,7 @@
 module OdaniaOmniauthAuthentication
 	class Strategy
 		def self.available_providers
-			OmniAuth::Strategies.constants.reject { |item| item =~ /Developer|OAuth2|Oauth/i }
+			OmniAuth::Strategies.constants.reject { |item| item =~ /Developer|OAuth2|Oauth|Identity/i }
 		end
 
 		def self.remaining_providers(user)
