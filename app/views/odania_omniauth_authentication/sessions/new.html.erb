@@ -1,6 +1,6 @@
 <p>
 	<% OdaniaOmniauthAuthentication::Strategy.remaining_providers(current_user).each do |service| %>
-		<%= link_to service, "/auth/#{service}/register" %>
+		<%= link_to service, "/auth/#{service}" %>
 	<% end %>
 </p>
 
