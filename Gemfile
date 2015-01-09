@@ -14,8 +14,11 @@ gemspec
 # gem 'debugger'
 
 group :development, :test do
+	gem 'factory_girl_rails'
+	gem 'minitest'
+	gem 'minitest-reporters'
 	gem 'database_cleaner'
-	gem 'odania_core'
+	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
 	gem 'omniauth'
 	gem 'omniauth-identity'
 

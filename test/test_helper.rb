@@ -12,6 +12,8 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 require 'minitest/reporters'
 MiniTest::Reporters.use!
 
+# Load factories
+Dir[Rails.root.join("#{File.dirname(__FILE__)}/factories/**/*.rb")].each { |f| require f }
 
 # Test Setup
 require "#{Gem.loaded_specs['odania_core'].full_gem_path}/test/support/test_setup.rb"
