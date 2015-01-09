@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Odania-IT/odania-core.git
-  revision: f5816c3d97f6528f658c7f800ac210478d0a94fd
+  revision: 9511e7bd199ea8bc9d0077207d2932e239ad3c56
   specs:
     odania_core (0.0.7)
       angular-ui-bootstrap-rails
