@@ -18,7 +18,7 @@ group :development, :test do
 	gem 'minitest'
 	gem 'minitest-reporters'
 	gem 'database_cleaner'
-	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git'
+	gem 'odania_core', git: 'https://github.com/Odania-IT/odania-core.git', branch: 'develop'
 	gem 'omniauth'
 	gem 'omniauth-identity'
 
