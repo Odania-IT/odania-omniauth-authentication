@@ -1,4 +1,4 @@
-require_dependency "odania_omniauth_authentication/application_controller"
+require_dependency 'odania_omniauth_authentication/application_controller'
 
 module OdaniaOmniauthAuthentication
 	class SessionsController < ApplicationController
