@@ -2,8 +2,8 @@ require_dependency "odania_omniauth_authentication/application_controller"
 
 module OdaniaOmniauthAuthentication
 	class SessionsController < ApplicationController
-		skip_before_filter :verify_authenticity_token, :only => :create
-		before_filter :valid_site!
+		skip_before_action :verify_authenticity_token, :only => :create
+		before_action :valid_site!
 
 		def new
 		end
